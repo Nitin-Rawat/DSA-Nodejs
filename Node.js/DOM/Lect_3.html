@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | DOM</title>
+
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+
+    <ul class="language">
+        <li> javascript</li>
+    </ul>
+</body>
+
+<script>
+// in this we have to trverse whole tree because of (innerHTML) so its not suitable for large data
+    // function addLanguage(langName) {
+    //     const li = document.createElement('li');
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector('.language').appendChild(li) 
+    // }
+    // addLanguage("Typescript")
+    // addLanguage("python")
+    
+    //Same thing like above but optimize
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li) 
+    }
+    addOptiLanguage("Typescript")
+    addOptiLanguage("python")
+    addOptiLanguage("golang")
+    addOptiLanguage("golang")
+    addOptiLanguage("golang")
+
+    //Editing
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "C++"  //again not optimized
+    // const newli = document.createElement("li")
+    // newli.textContent = "MOJO" //doing same 1
+    secondLang.textContent = "MOJO" //doing same 2
+    // secondLang.replaceWith(newli) 
+
+    // Edit third Element
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    thirdLang.textContent = "GOKU"
+
+
+</script>
+
+</html>
